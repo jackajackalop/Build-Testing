@@ -1,6 +1,6 @@
 language: cpp
 before_install:
-        sudo apt-get ftjam
+        sudo apt-get install ftjam
 compiler:
         gcc
 os: 
