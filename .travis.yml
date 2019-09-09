@@ -1,10 +1,13 @@
 language: cpp
-before_install:
-        sudo apt-get install ftjam
 compiler:
         gcc
 os: 
         linux
+before_install:
+        sudo apt-get install ftjam
+install:
+        wget https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
+        tar -xzvf nest-libs-linux-v0.0.tar.gz
 script:
         jam
 
