@@ -7,7 +7,7 @@ before_install:
         - sudo apt-get install ftjam
 install:
         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
-        - tar zxf nest-libs-linux-v0.0.tar.gz
-        - mv nest-libs-linux-v0.0 ../nest-libs
+        - mkdir ../nest-libs
+        - tar -C ../nest-libs -zxvf nest-libs-linux-v0.0.tar.gz
 script:
         jam
