@@ -1,10 +1,10 @@
 language: cpp
 before_install:
-        -sudo apt-get ftjam
+        sudo apt-get ftjam
 compiler:
-        -gcc
+        gcc
 os: 
-        -linux
+        linux
 script:
-        -jam
+        jam
 
