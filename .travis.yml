@@ -8,6 +8,6 @@ before_install:
 install:
         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
         - tar zxf nest-libs-linux-v0.0.tar.gz
-        - mv nest-libs-linux-v0.0.tar.gz ../nest-libs
+        - mv nest-libs-linux-v0.0 ../nest-libs
 script:
         jam
