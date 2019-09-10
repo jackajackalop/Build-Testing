@@ -19,17 +19,18 @@ matrix:
                 before_install:
                         - brew install ftjam
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-macos-v0.0.tar.gz 
-                        - gunzip -c nest-libs-macos-v0.0.tar.gz | tar xopf -
+                          #- gunzip -c nest-libs-macos-v0.0.tar.gz | tar xopf -
+                        - tar -xzvf nest-libs-macos-v0.0.tar.gz 
                         - mv nest-libs ..
-              - name: "windows"
-                os: windows
-                compiler: gcc
-                before_install:
-                        - choco install visualstudio2019buildtools ; true 
-                        - choco install 7zip
-                        - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-windows-v0.0.zip
-                        - unzip -a nest-libs-windows-v0.0.zip
-                        - mv nest-libs ..
+                          #              - name: "windows"
+                          #                os: windows
+                          #                compiler: gcc
+                          #                before_install:
+                          #                        - choco install visualstudio2019buildtools ; true 
+                          #                        - choco install 7zip
+                          #                        - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-windows-v0.0.zip
+                          #                        - unzip -a nest-libs-windows-v0.0.zip
+                          #                        - mv nest-libs ..
 
 
 script:
