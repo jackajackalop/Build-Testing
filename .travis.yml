@@ -5,12 +5,11 @@ matrix:
                 os: linux
                 compiler: gcc
 
-        before_install:
-                - sudo apt-get install ftjam
-                - sudo apt-get install libgl1-mesa-dev
-        install:
-                - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
-                - tar -zxvf nest-libs-linux-v0.0.tar.gz
-                - mv nest-libs ..
+                install:
+                        - sudo apt-get install ftjam
+                        - sudo apt-get install libgl1-mesa-dev
+                        - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
+                        - tar -zxvf nest-libs-linux-v0.0.tar.gz
+                        - mv nest-libs ..
 script:
         jam
