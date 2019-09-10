@@ -4,7 +4,7 @@
 #You shouldn't need to change it.
 
 if $(OS) = NT { #Windows
-	NEST_LIBS = nest-libs\\windows ;
+	NEST_LIBS = ..\\nest-libs\\windows ;
 	C++FLAGS = /nologo /Z7 /c /EHsc /W3 /WX /MD
 		/I"$(NEST_LIBS)/SDL2/include"
 		/I"$(NEST_LIBS)/glm/include"
@@ -28,7 +28,7 @@ if $(OS) = NT { #Windows
 	MakeLocate SDL2.dll : dist ;
 	MakeLocate README-SDL.txt : dist ;
 } else if $(OS) = MACOSX { #MacOS
-	NEST_LIBS = nest-libs/macos ;
+	NEST_LIBS = ../nest-libs/macos ;
 	C++ = clang++ ;
 	C++FLAGS =
 		-std=c++14 -g -Wall -Werror
