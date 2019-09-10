@@ -19,7 +19,7 @@ matrix:
                 before_install:
                         - brew install ftjam
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-macos-v0.0.tar.gz 
-                        - gunzip -c nest-libs-macos-v0.0.tar.gz | tar xopft -
+                        - gunzip -c nest-libs-macos-v0.0.tar.gz | tar xopf -
                         - mv nest-libs ..
               - name: "windows"
                 os: windows
