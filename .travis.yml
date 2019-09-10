@@ -1,17 +1,16 @@
 language: cpp
-compiler:
-        - gcc
-        - clang
-os: 
-        - linux
-        - osx
-before_install:
-        - if [$TRAVIS_OS_NAME == linux]; then sudo apt-get install ftjam; fi
-        - if [$TRAVIS_OS_NAME == osx]; then brew install ftjam          ; fi
-        - sudo apt-get install libgl1-mesa-dev
-install:
-        - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
-        - tar -zxvf nest-libs-linux-v0.0.tar.gz
-        - mv nest-libs ..
+matrix:
+        include:
+                -name: "linux"
+                os: linux
+                compiler: gcc
+
+        before_install:
+                - sudo apt-get install ftjam
+                - sudo apt-get install libgl1-mesa-dev
+        install:
+                - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
+                - tar -zxvf nest-libs-linux-v0.0.tar.gz
+                - mv nest-libs ..
 script:
         jam
