@@ -9,21 +9,28 @@ matrix:
                                 packages:
                                         - ftjam
                                         - libgl1-mesa-dev
-                install:
+                before_install:
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
                         - tar -zxvf nest-libs-linux-v0.0.tar.gz
                         - mv nest-libs ..
               - name: "mac"
                 os: osx
                 compiler: clang
-                addons: 
-                        homebrew:
-                                packages:
-                                        - ftjam
-                install:
+                before_install:
+                        - brew install ftjam
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-macos-v0.0.tar.gz 
                         - tar -zxvf nest-libs-macos-v0.0.tar.gz
                         - mv nest-libs ..
+              - name: "windows"
+                os: windows
+                compiler: gcc
+                before_install:
+                        - choco install visualstudio2019buildtools ; true 
+                        - choco install 7zip
+                        - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-macos-v0.0.tar.gz 
+                        - tar -zxvf nest-libs-macos-v0.0.tar.gz
+                        - mv nest-libs ..
+
 
 script:
         jam
