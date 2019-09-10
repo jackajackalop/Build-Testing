@@ -6,8 +6,8 @@ os:
         - linux
         - osx
 before_install:
-        - if [$TRAVIS_OS_NAME == linux]; then sudo apt-get install ftjam
-        - if [$TRAVIS_OS_NAME == osx]; then brew install ftjam
+        - if [$TRAVIS_OS_NAME == linux]; then sudo apt-get install ftjam; fi
+        - if [$TRAVIS_OS_NAME == osx]; then brew install ftjam          ; fi
         - sudo apt-get install libgl1-mesa-dev
 install:
         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
