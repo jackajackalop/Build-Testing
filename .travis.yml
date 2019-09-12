@@ -32,6 +32,7 @@ matrix:
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-windows-v0.0.zip
                         - unzip -a nest-libs-windows-v0.0.zip
                         - mv nest-libs ..
+                        - mv dirty_hack.bat ../nest-libs/windows/jam
                         - cd ../nest-libs/windows/jam
                 script: cmd "/C call dirty_hack.bat"
 
