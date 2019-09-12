@@ -30,6 +30,11 @@ matrix:
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-windows-v0.0.zip
                         - unzip -a nest-libs-windows-v0.0.zip
                         - mv nest-libs ..
+                        - cd ../nest-libs/windows/jam
+                        - cmd /c "call vcvars64_and_jam.bat"
+                        - set JAM_TOOLSET=VISUALC
+                        - set PATH=%PATH%;pwd
+                        - cd ../../../Build-Testing
 
 script:
         jam
