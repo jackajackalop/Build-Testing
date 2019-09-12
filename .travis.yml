@@ -13,6 +13,7 @@ matrix:
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
                         - tar -zxvf nest-libs-linux-v0.0.tar.gz
                         - mv nest-libs ..
+                script: jam
               - name: "mac"
                 os: osx
                 compiler: clang
@@ -21,6 +22,7 @@ matrix:
                         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-macos-v0.0.tar.gz 
                         - tar -xzvf nest-libs-macos-v0.0.tar.gz 
                         - mv nest-libs ..
+                script: jam
               - name: "windows"
                 os: windows
                 compiler: gcc
@@ -31,10 +33,5 @@ matrix:
                         - unzip -a nest-libs-windows-v0.0.zip
                         - mv nest-libs ..
                         - cd ../nest-libs/windows/jam
-                        - cmd /c "call vcvars64_and_jam.bat"
-                        - set JAM_TOOLSET=VISUALC
-                        - set PATH=%PATH%;pwd
-                        - cd ../../../Build-Testing
+                script: cmd "/C call dirty_hack.bat"
 
-script:
-        jam
