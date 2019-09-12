@@ -25,7 +25,7 @@ matrix:
                 script: jam
               - name: "windows"
                 os: windows
-                compiler: gcc
+                compiler: clang
                 before_install:
                         - choco install visualstudio2019buildtools ; true 
                         - choco install 7zip
