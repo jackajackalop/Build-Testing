@@ -8,5 +8,5 @@ install:
         - mv nest-libs ..
         - mv dirty_hack.bat ../nest-libs/windows/jam
         - cd ../nest-libs/windows/jam
-script: cmd "/C call dirty_hack.bat"
+build_script: cmd "/C call dirty_hack.bat"
 
