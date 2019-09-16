@@ -13,6 +13,6 @@ deploy:
         provider: GitHub
         auth_token:
                 secure:  2anfWWNVVdf6mWjBTTvxeaaI/HRn6s0Z5/TqVGjkXMt2GCxhkGEcbQOGWQ8sN3GN
-        artifact: /dist/*
+        artifact: ./dist/*
         draft: false
         prerelease: false
