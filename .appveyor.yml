@@ -7,12 +7,14 @@ install:
         - mv nest-libs ..
         - mv windows_build.bat ../nest-libs/windows/jam
         - cd ../nest-libs/windows/jam
-build_script: cmd "/C call windows_build.bat"
+build_script: 
+        - cmd "/C call windows_build.bat"
+        - C:\\Program Files\\7-zip\\7z.exe -a windows-v$(appveyor_build_version) \\dist\\*
 deploy:
         release: windows-v$(appveyor_build_version)
         provider: GitHub
         auth_token:
                 secure:  2anfWWNVVdf6mWjBTTvxeaaI/HRn6s0Z5/TqVGjkXMt2GCxhkGEcbQOGWQ8sN3GN
-        artifact: ./dist/*
+        artifact:  windows-v$(appveyor_build_version).*
         draft: false
         prerelease: false
