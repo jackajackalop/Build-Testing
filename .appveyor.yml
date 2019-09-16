@@ -1,7 +1,5 @@
 image: Visual Studio 2019
 install:
-        #    - cinst visualstudio2019buildtools ; true 
-        #- cinst visualstudio2019-workload-vctools
         - cinst 7zip
         - cinst wget
         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-windows-v0.0.zip
@@ -9,5 +7,12 @@ install:
         - mv nest-libs ..
         - mv dirty_hack.bat ../nest-libs/windows/jam
         - cd ../nest-libs/windows/jam
-build_script: cmd "/C call dirty_hack.bat"
-
+build_script: cmd "/C call windows_build.bat"
+deploy:
+        release: windows-v$(appveyor_build_version)
+        provider: GitHub
+        auth_token:
+                secure:  8570d804d2ab6c7dc92e30e1c032a0223c11ce08
+        artifact: /dist/*
+        draft: false
+        prerelease: false
