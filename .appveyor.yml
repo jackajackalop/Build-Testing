@@ -6,10 +6,11 @@ install:
         - unzip -a nest-libs-windows-v0.0.zip
         - mv nest-libs ..
         - mv windows_build.bat ../nest-libs/windows/jam
-        - cd ../nest-libs/windows/jam
 build_script: 
+        - GAME_DIR = $(pwd)
+        - cd ../nest-libs/windows/jam
         - cmd "/C call windows_build.bat"
-        - cd ../../../Build-Testing
+        - cd GAME_DIR 
         - 7z a windows-build.zip dist/*.*                
 skip_tags: true
 artifacts:
