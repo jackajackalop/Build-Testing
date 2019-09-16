@@ -16,7 +16,7 @@ deploy:
         provider: GitHub
         auth_token:
                 secure:  2anfWWNVVdf6mWjBTTvxeaaI/HRn6s0Z5/TqVGjkXMt2GCxhkGEcbQOGWQ8sN3GN
-        artifact:  windows-v$(appveyor_build_version).zip
+        artifact:  .*windows-v$(appveyor_build_version).zip
         draft: false
         prerelease: false
         on:
