@@ -11,6 +11,7 @@ build_script:
         - cmd "/C call windows_build.bat"
         - cd ../../../Build-Testing
         - 7z a windows-v$(appveyor_build_version).zip dist/*.*
+        - ls
 artifacts:
         - path: windows-v$(appveyor_build_version).zip
           name: zip
