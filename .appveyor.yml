@@ -10,8 +10,7 @@ build_script:
         - set GAME_DIR = $(pwd)
         - cd ../nest-libs/windows/jam
         - cmd "/C call windows_build.bat"
-        - echo $GAME_DIR
-        - cd $GAME_DIR 
+        - cd $(GAME_DIR)
         - 7z a windows-build.zip dist/*.*                
 skip_tags: true
 artifacts:
