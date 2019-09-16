@@ -3,6 +3,7 @@ install:
         #    - cinst visualstudio2019buildtools ; true 
         #- cinst visualstudio2019-workload-vctools
         - cinst 7zip
+        - cinst wget
         - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-windows-v0.0.zip
         - unzip -a nest-libs-windows-v0.0.zip
         - mv nest-libs ..
