@@ -7,7 +7,8 @@ install:
         - mv nest-libs ..
         - mv windows_build.bat ../nest-libs/windows/jam
 build_script: 
-        - set GAME_DIR=$pwd
+        - set GAME_DIR=%pwd%
+        - echo %GAME_DIR%
         - cd ../nest-libs/windows/jam
         - cmd "/C call windows_build.bat"
         - cd %GAME_DIR%
