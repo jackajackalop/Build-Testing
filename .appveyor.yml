@@ -10,7 +10,8 @@ install:
 build_script: 
         - cmd "/C call windows_build.bat"
         - cd ../../../Build-Testing
-        - 7z a windows-build.zip dist/*.*
+        - 7z a windows-build.zip dist/*.*                
+skip_tags: true
 artifacts:
         - path: windows-build.zip
           name: zip
