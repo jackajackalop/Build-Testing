@@ -11,12 +11,14 @@ build_script:
         - cmd "/C call windows_build.bat"
         - cd ../../../Build-Testing
         - 7z a windows-v$(appveyor_build_version).zip dist/*.*
+artifacts:
+        - path: windows-v$(appveyor_build_version).zip
+          name: zip
 deploy:
         release: windows-v$(appveyor_build_version)
         provider: GitHub
         auth_token:
                 secure:  2anfWWNVVdf6mWjBTTvxeaaI/HRn6s0Z5/TqVGjkXMt2GCxhkGEcbQOGWQ8sN3GN
-        artifact:  .*windows-v$(appveyor_build_version).zip
         draft: false
         prerelease: false
         on:
