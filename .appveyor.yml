@@ -9,7 +9,8 @@ install:
         - cd ../nest-libs/windows/jam
 build_script: 
         - cmd "/C call windows_build.bat"
-        - 7z a windows-v$(appveyor_build_version) dist/*.*
+        - ls
+        - 7z a windows-v$(appveyor_build_version).zip dist/*.*
 deploy:
         release: windows-v$(appveyor_build_version)
         provider: GitHub
