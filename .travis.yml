@@ -26,6 +26,7 @@ script:
 - jam
 - tar -czvf build.tar.gz dist/*
 deploy:
+  release: linux_and_mac
   params: env
   provider: releases
   file: build.tar.gz
