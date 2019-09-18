@@ -26,14 +26,10 @@ script:
 - jam
 - tar -czvf build.tar.gz dist/*
 deploy:
-  name: linux_and_mac
-  params: env
   provider: releases
+  api_key:
+    secure: lulhFtxtHmGXeMAawZsYNtrQtuepqVlx15J9PH8aHVKA2sIFwTIRaUXoY3uq3SfhkEuakJBxsq7gnhsZvrkR9Fn1h/44ScuAja+LMRDIidbv9Ijlr+xl9NgZx4vqtTP3Cnbzfn9sWjMbU13kTbjHG8EWAFSStNXX/1CsT9DxmMKGlF+9UxZPJM3nA5Y2UNktF32bo3V9yV/e8evvp4nC4CrZMTqjcOYw+Muo/D/8COeG/XfSJkiOFrbLGdndJwE2WMeEkdLm6S7g74g3JSJz+l9b+Tcr71KKQVZpOCBwTb23ubSC+t4Kz1Y+n28qGIFQjXEUknvoWnlpTw4uxeI8ZQOoSJz1ZXo83rATykmfoaSSuPaXwF/2HhaviIqKmzvOp6XzuLlOmCb3MVQsQGwQtAXpV0qug2CJQVMoxdhqbYNo3c6uKszkV0Dilcn5v2OhlaxbJmTVOsnNvlWx5xrQh2oDiboB8qWtNokFzz/e/WI1HHpSC0RocY7jyPV6cxpFcojFGA59xjohSI4zHnJ51LPon2JVUGlMSDeeJikdwI7ZHv0ee8FNBL4mDfyt74e5SGX0H4AWyvxLiJRKm4CSC1YmayAdKcq2Pol4N451YTAChOUbYap4vJXUlSgqyNgv5RP3AXCx43k784k+dLztmbP77D2d0/dQBuq3jVdfqIY=
   file: build.tar.gz
-  api_key: %api_key% 
-  skip_cleanup: true
   on:
-    tags: false
-env:
-  global:
-    secure: RDFo4gHlAkLPf+vFE9K5rrCuE67bG1v5qN9i5fVxwgswzDAM7zPCGNfkRMmVuFhERJhkpwlrbOoXJ6OKFyA3r6zITQRLBdA63ShsUMUjNghSQEz9cc1n7Av2sfkwul1feD+JSYAaxhw8/g3UwfGIFFegVw0TxkZaF52qdnXou+DKH0N4DRyPcNGPKgulyLSzu5Zjj7mjT5oPacCmveHWk9hBT+pz6zxLtZmsK2xy49P7yFKOC3xmG7efWrwZqtzB06naTQERmAMlooClBKySUENGXurx1rVtHc5BVsgy1xTbxWpo5grgxMhaJ/8xG1udl95w4wL92Utu3uuA2+VhPjQ/UeU4BD48NX9Cpb+jZKXp7DvsSuR49LcIyVRTYcjQdn7uQK2OGZwm+iU0PM+LCh3gKiupjPBPtaxkuYLTQ4eeJ9eNDUL7wjQJDxZaJuWyY/Lvd1cPpHRhRgTvUtKhDXmVomgk8yGqfrEy/lA8HhiaAIGxg7jhenqe8Wty67RrSHNJYW4TQfB1TPyorMIzdAXONKVRpo1Oj7UcedSikpJt9g/AWA5k/WdTVO9S7lx6IWzlhqMF6nGs3RmNKYnoIQQ2KhCb9cfpF6zPI7wbNwqMwwZzCfls/FzsuOqlQdNgHqokmWE8pluFb/oVIsxO/KWsqXFnYvxguX4aAZ/qhU0=
+    repo: jackajackalop/Build-Testing
+    branch: master
