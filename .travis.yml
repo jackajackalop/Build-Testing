@@ -1,34 +1,36 @@
 language: cpp
 matrix:
-        include:
-              - name: "linux"
-                os: linux
-                compiler: gcc
-                addons:
-                        apt:
-                                packages:
-                                        - ftjam
-                                        - libgl1-mesa-dev
-                before_install:
-                        - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
-                        - tar -zxvf nest-libs-linux-v0.0.tar.gz
-                        - mv nest-libs ..
-                script: jam
-              - name: "mac"
-                os: osx
-                compiler: clang
-                before_install:
-                        - brew install ftjam
-                        - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-macos-v0.0.tar.gz 
-                        - tar -xzvf nest-libs-macos-v0.0.tar.gz 
-                        - mv nest-libs ..
+  include:
+  - name: linux
+    os: linux
+    compiler: gcc
+    addons:
+      apt:
+        packages:
+        - ftjam
+        - libgl1-mesa-dev
+    before_install:
+    - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-linux-v0.0.tar.gz
+    - tar -zxvf nest-libs-linux-v0.0.tar.gz
+    - mv nest-libs ..
+    script: jam
+  - name: mac
+    os: osx
+    compiler: clang
+    before_install:
+    - brew install ftjam
+    - wget -c https://github.com/15-466/nest-libs/releases/download/v0.0/nest-libs-macos-v0.0.tar.gz
+    - tar -xzvf nest-libs-macos-v0.0.tar.gz
+    - mv nest-libs ..
 script:
-        - jam
-        - tar -czvf build.tar.gz dist/* 
+- jam
+- tar -czvf build.tar.gz dist/*
 deploy:
-        provider: releases
-        api_key: fjdklsa;
-        file: build.tar.gz
-        skip_cleanup: true
-        on: 
-                tags: false
+  provider: releases
+  file: build.tar.gz
+  skip_cleanup: true
+  on:
+    tags: false
+env:
+  global:
+    secure: Bz0MoQCMlP6t1D+r7IR9xE00yc8VG1X6/Z1v4psUpiV90tre+rC+qmiWBvKGcencXPTJJ2QwWnAiBnxPJT2Q9Qq+2yYSoKtwRjj5JU3YFr0qP5uRP6+KGkYM8EY4NibOmqcjARK3Xm4iAK3swxyOd1xsQRrwygBizuOgaSxy6uKMQNWPBUcl8dX4gH6R89l4ooMekZw+aK7nDKhdQimUwQ9vgxFVQKV19jO+gGj4N0QE4MLwO4w4A1l1/CSIkcva4OgVGYbD8MmMJrgg8cQU5/kLkHJKKZl6jAuRg0mWdPeq8BLX5lSt20AIz1QXTM5t33M+XXnR/Ee1TGQpjAWOJ0CvGLjSHixVimGtbcHiLNpyHISQUF4mdaQxsP8zNXRyPejfHePPAt6YIpriAWZJ3mResYSuCScwVTD4M1cYz4JDOJmPLvWdQrM+SfbKZND3bBTGz9S+XSh1c6PydkGHQDktXvQmDyEk7i96cub5m4OKijEcIuZr66qNtjx3JtB0f5re1x8UxegtV+w87Q566GUNOd3q/qNceMZPcIZjpT+RP/3ztkQpojJICnNFbO5e/igxIwncR0X68XSHLTK5/4uIgayfHVMdgX/bf+69bDKgEsYqU3RdD3El3XnY42kDwrPBMuQCv/uOkoNaE1M9kmYpMiejzS2aJvPi6Nzydho=
