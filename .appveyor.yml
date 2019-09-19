@@ -13,12 +13,11 @@ build_script:
         - cmd "/C call windows_build.bat"
         - cd %GAME_DIR%
         - 7z a windows-build.zip dist/*.*                
-skip_tags: true
+skip_non_tags: true
 artifacts:
         - path: windows-build.zip
           name: zip
 deploy:
-        release: windows
         provider: GitHub
         force_update: true
         auth_token:
@@ -27,3 +26,4 @@ deploy:
         prerelease: false
         on:
                 branch: master
+
