@@ -25,6 +25,8 @@ matrix:
 script:
 - jam
 - tar -czvf build.tar.gz dist/*
+- ls
+
 deploy:
   provider: releases
   skip_cleanup: true
