@@ -18,6 +18,7 @@ artifacts:
         - path: windows-build.zip
           name: zip
 deploy:
+        release: windows
         provider: GitHub
         force_update: true
         auth_token:
