@@ -24,6 +24,8 @@ matrix:
     - mv nest-libs ..
 script:
 - jam
+
+after_success:
 - tar -czvf build.tar.gz dist/*
 - ls
 
