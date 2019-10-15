@@ -11,8 +11,8 @@ build_script:
         - set GAME_DIR=%cd%
         - echo %GAME_DIR%
         - cd ../nest-libs/windows/jam
+        - mv %GAME_DIR%/* .
         - cmd "/C call windows_build.bat"
-        - cd %GAME_DIR%
         - 7z a windows-build.zip dist/*.*                
 skip_non_tags: true
 artifacts:
