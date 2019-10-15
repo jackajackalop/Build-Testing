@@ -20,8 +20,7 @@ matrix:
     addons:
             homebrew:
                     packages:
-                            -ftjam
-                    update: true
+                            - ftjam
     before_install:
             #    - brew install ftjam
     - wget -c https://github.com/15-466/nest-libs/releases/download/v0.2/nest-libs-macos-v0.2.tar.gz
